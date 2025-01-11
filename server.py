@@ -1,7 +1,13 @@
 import socket
+import logging
+
+logging.basicConfig(level=logging.INFO, filename="server.log", filemode="a",
+                    format="%(asctime)s - %(message)s")
+
 
 
 def start_server():
+    logging.info("Server is starting...")
     # This specifies the address family used by our server. This case it uses IPV4
     # This specifies the protocol used by the server in transmission of data across the web.
     # Our server uses TCP as opposed to UDP
