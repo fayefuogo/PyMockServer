@@ -3,7 +3,7 @@ name: Python Test Automation
 on:
   # Only trigger the workflow based on the schedule
   schedule:
-    - cron: "5 1 * * *"  # Runs at 8:05 PM Philadelphia time during standard time (EST, UTC-5)
+    - cron: "13 1 * * *"  # Runs at 8:05 PM Philadelphia time during standard time (EST, UTC-5)
 
 jobs:
   test:
