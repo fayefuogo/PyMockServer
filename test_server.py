@@ -6,7 +6,7 @@ import socket
 server_process = subprocess.Popen(["python", "server.py"])
 
 # Give the server some time to start
-time.sleep(2)
+time.sleep(10)
 
 # Then run the tests (e.g., test server responses)
 def test_server_get_response():
