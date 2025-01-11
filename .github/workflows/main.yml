@@ -10,7 +10,7 @@ on:
       - main
   # Schedule the workflow to run every 24 hours
   schedule:
-    - cron: "0 0 * * *"  # This runs the workflow at midnight UTC every day
+  - cron: "55 0 * * *" # This runs the workflow at midnight UTC every day
 
 jobs:
   test:
