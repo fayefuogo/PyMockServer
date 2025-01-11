@@ -1,0 +1,32 @@
+name: Run Tests
+
+on:
+  schedule:
+    # This will trigger the workflow every 5 minutes
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Start mock server
+      run: |
+        nohup python3 mock_server.py &
+    
+    - name: Run tests
+      run: |
+        pytest unit_tests.py
