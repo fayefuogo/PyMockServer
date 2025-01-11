@@ -1,16 +1,9 @@
 name: Python Test Automation
 
 on:
-  # Trigger on push to 'main' branch and pull requests targeting 'main'
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  # Schedule the workflow to run every 24 hours
+  # Only trigger the workflow based on the schedule
   schedule:
-  - cron: "55 0 * * *" # This runs the workflow at midnight UTC every day
+    - cron: "5 1 * * *"  # Runs at 8:05 PM Philadelphia time during standard time (EST, UTC-5)
 
 jobs:
   test:
