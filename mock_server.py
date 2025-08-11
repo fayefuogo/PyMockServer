@@ -19,13 +19,9 @@ class MockRequestHandler(http.server.BaseHTTPRequestHandler):
 
 def start_mock_server():
     logging.info("Starting mock server...")
-
-    # Set up the server to listen on the loopback address and port 8080
     handler = MockRequestHandler
     server = socketserver.TCPServer(("127.0.0.1", 8080), handler)
-
     logging.info("Mock server is running on http://127.0.0.1:8080")
-
     try:
         server.serve_forever()  # Run the server forever
     except KeyboardInterrupt:
@@ -35,4 +31,3 @@ def start_mock_server():
 
 if __name__ == "__main__":
     start_mock_server()
-
