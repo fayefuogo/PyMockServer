@@ -3,7 +3,6 @@ import socketserver
 import logging
 
 
-# Mock handler that responds with a specific message
 class MockRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)  # HTTP status code for success
@@ -36,3 +35,4 @@ def start_mock_server():
 
 if __name__ == "__main__":
     start_mock_server()
+
